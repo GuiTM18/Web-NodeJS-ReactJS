@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.css'
 
 
 export default class App extends Component {
@@ -30,21 +31,23 @@ export default class App extends Component {
 
             <div>
 
-                <div>
-                    <div>
-                        <label>Numero 1</label>
-                        <input onChange={(e) => this.setState({ num1: e.target.value })} value={this.state.num1} type="text" className="inpuText" />
+                <div className='box'>
+                    <div >
+                        <label className='label' >Número 1:</label>
+                        <br/>
+                        <input className='position' onChange={(e) => this.setState({ num1: e.target.value })} value={this.state.num1} type="text"/>
                     </div>
                     <div>
-                        <label>Numero 2</label>
-                        <input onChange={(e) => this.setState({ num2: e.target.value })} value={this.state.num2} type="text"/>
+                        <label className='label' >Número 2:</label>
+                        <br/>
+                        <input className='position' onChange={(e) => this.setState({ num2: e.target.value })} value={this.state.num2} type="text"/>
                     </div>
                 </div>
 
-                <button type="submit" className="btn" onClick={this.calcular}>Multiplicar</button>
+                <button type="submit" className="btt" onClick={this.calcular}>Multiplicar</button>
 
                 <div>
-                    <p>{this.state.resultado}</p>
+                    <p className='resu'>{this.state.resultado}</p>
                 </div>
 
             </div>
