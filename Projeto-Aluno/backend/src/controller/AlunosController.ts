@@ -27,7 +27,7 @@ export const updateStudent = async(request: Request, response: Response) => {
         return response.json(alunosUpdated);
     }
     else{
-        return response.status(404).json( {message: 'Tarefa não encontrada!'} )
+        return response.status(404).json( {message: 'Aluno não encontrado!'} )
     }
 };
  
@@ -36,10 +36,10 @@ export const deleteStudent = async(request: Request, response: Response) => {
     const alunos = await getRepository(Students).delete(id)
  
     if (alunos.affected == 1){
-        return response.status(200).json( {message: "Tarefa excluída com sucesso!"} );
+        return response.status(200).json( {message: "Aluno excluído com sucesso!"} );
     }
     else{
-        return response.status(404).json( {message: 'Tarefa não encontrada!'} )
+        return response.status(404).json( {message: 'Aluno não encontrado!'} )
     }
 };
  
@@ -54,6 +54,6 @@ export const finishedStudent = async(request: Request, response: Response) => {
         return response.json(alunosFinished);
     }
     else{
-        return response.status(404).json( {message: 'Tarefa não encontrada!'} )
+        return response.status(404).json( {message: 'Aluno não encontrado!'} )
     }
 };
